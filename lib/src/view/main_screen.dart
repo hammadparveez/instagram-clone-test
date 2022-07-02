@@ -21,6 +21,45 @@ class MainScreen extends StatelessWidget {
           actions: [
             _buildActionIcon(Assets.paperPlaneIcon),
           ]),
+      bottomNavigationBar: BottomNavigationBar(
+        elevation: 0,
+        iconSize: 20,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                Assets.homeIcon,
+                height: 20,
+                width: 20,
+              ),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                Assets.paperPlaneIcon,
+                height: 20,
+                width: 20,
+              ),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                Assets.addPostIcon,
+                height: 20,
+                width: 20,
+              ),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                Assets.heartIcon,
+                height: 20,
+                width: 20,
+              ),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Image.network(NetworkAssets.flutterBirdAvatar,
+                  height: 20, width: 20),
+              label: ''),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -30,7 +69,7 @@ class MainScreen extends StatelessWidget {
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 0),
-                itemCount: 20,
+                itemCount: stories.length,
                 separatorBuilder: (_, index) => const SizedBox(width: 8),
                 itemBuilder: (context, index) {
                   var child = Container(
@@ -42,12 +81,12 @@ class MainScreen extends StatelessWidget {
                       border: Border.all(width: 1, color: Colors.black12),
                     ),
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           alignment: Alignment.topCenter,
-                          image: NetworkImage(NetworkAssets.carAvatar),
+                          image: NetworkImage(stories[index]),
                         ),
                       ),
                     ),
@@ -260,7 +299,7 @@ class MainScreen extends StatelessWidget {
           });
     }
     return Image.network(
-      NetworkAssets.hulkAvatar,
+      post.image!,
       fit: BoxFit.cover,
     );
   }

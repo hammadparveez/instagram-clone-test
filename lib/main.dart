@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       scrollBehavior: DragScrollBehaviorMacOS(),
       theme: ThemeData(
+          bottomNavigationBarTheme:
+              const BottomNavigationBarThemeData(backgroundColor: Colors.white),
           primaryColor: Colors.white,
           scaffoldBackgroundColor: Colors.white,
           colorScheme: const ColorScheme.light(onPrimary: Colors.black)),

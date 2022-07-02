@@ -2,13 +2,13 @@ class Assets {
   static const _basePath = 'assets/images';
 
   //------------ICONS------------
-  static const homeIcon = '$_basePath/home.svg';
+  static const homeIcon = '$_basePath/home1.svg';
   static const addPostIcon = '$_basePath/add-post.svg';
   static const commentIcon = '$_basePath/comment.svg';
   static const compassIcon = '$_basePath/compass.svg';
   static const heartIcon = '$_basePath/heart.svg';
   static const bookmarkIcon = '$_basePath/bookmark.svg';
-  static const paperPlaneIcon = '$_basePath/paper-plane.svg';
+  static const paperPlaneIcon = '$_basePath/paper-plane1.svg';
 }
 
 class NetworkAssets {
